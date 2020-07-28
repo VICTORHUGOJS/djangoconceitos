@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Person</title>
+</head>
+<body>
+    <ul>
+        {% for person in persons  %}  <!--#Listagem model - clientes -->
+            <li>
+                <a href="{% url 'persons_update' person.id %}">  {{ person.first_name }}</a>
+                <a href="{% url 'persons_delete' person.id %}"> Deletar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'person_new' %}">Novo cadastro</a>
+</body>
+</html>
